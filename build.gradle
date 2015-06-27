@@ -1,0 +1,52 @@
+project(":Noir_Engine")
+{
+	apply plugin: "cpp"
+	
+	model{
+		components{
+		
+			// Contains ECS implementation
+			Noir(NativeLibrarySpec)
+			
+			// Contains Audio Engine 
+			Noir_Audio(NativeLibrarySpec)
+			
+			// Contains Graphics Engine
+			Noir_Graphic(NativeLibrarySpec)
+			{
+				// TODO:
+				// Implement PIMPLs and exclude based on operating system
+				// include Noir ect.
+			
+				binaries.all{
+					if(toolChain in VisualCpp)
+					{
+						// We're definetly on windows
+						linker.args "user32.lib","opengl32.lib"
+					}
+					if(toolChain in Gcc)
+					{
+						// TODO:
+						// Check if windows or linux; apply diffrent libraries for each OS.
+					}
+				}
+			}
+			
+    	binaries.withType(SharedLibraryBinarySpec) {
+        	if (toolChain in VisualCpp) {
+				println "[*] Defined API_EXPORT."
+            	cppCompiler.define "API_EXPORT"
+        	}
+    	}
+			
+		}
+	}
+}
+
+project(":Noir_Editor")
+{
+}
+
+project(":Noir_Player")
+{
+}
