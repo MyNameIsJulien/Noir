@@ -1,30 +1,22 @@
-/*
+#ifndef NOIR_ENTITY_IMPL
+#define NOIR_ENTITY_IMPL
 
-	This file is part of the noir project.
-	https://github.com/MyNameIsJulien/Noir
-	 
-	 The "Entity" class is a convenience class wrapping and ID (unsigned long).
-
-*/
-
-#ifndef NOIR_ENTITY_HEADER
-#define NOIR_ENTITY_HEADER
-
-#include "World.hpp"
-#include "Entity.hpp"
+#include "Entity.h"
+#include "World.h"
 
 namespace Noir{
 	namespace ECS{
 		
-		Entity::~Entity()
+		Entity::Entity(World& world, const unsigned int ID)
 		{
-			// TODO:
-			// Finish this.
+			this->world = &world;
+			this->ID	= ID;
 		}
 		
-unsigned long Entity::getID()
+		Entity::Entity(const Entity& other)
 		{
-			return ID;
+			this->world = other.world;
+			this->ID	= other.ID;
 		}
 		
 	}

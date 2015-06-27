@@ -1,0 +1,4 @@
+/OUT:C:\Users\Julien\Desktop\Noir\Noir_Engine\build\binaries\noirStaticLibrary\Noir.lib
+/NOLOGO
+C:\Users\Julien\Desktop\Noir\Noir_Engine\build\objs\noirStaticLibrary\NoirCpp\7rooeu8tryqoz27lnodrztum6\Entity.obj
+C:\Users\Julien\Desktop\Noir\Noir_Engine\build\objs\noirStaticLibrary\NoirCpp\9jdqmki7d6lgp0ozlizj4tk6t\World.obj

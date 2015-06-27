@@ -1,0 +1,8 @@
+See file:///C:/Users/Julien/Desktop/Noir/Noir_Engine/build/tmp/compileNoirStaticLibraryNoirCpp/output.txt for all output for compileNoirStaticLibraryNoirCpp.
+compiling World.cpp successful.
+World.cpp
+
+compiling Entity.cpp successful.
+Entity.cpp
+
+Finished compileNoirStaticLibraryNoirCpp, see full log file:///C:/Users/Julien/Desktop/Noir/Noir_Engine/build/tmp/compileNoirStaticLibraryNoirCpp/output.txt.

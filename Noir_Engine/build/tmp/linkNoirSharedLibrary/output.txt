@@ -1,0 +1,4 @@
+See file:///C:/Users/Julien/Desktop/Noir/Noir_Engine/build/tmp/linkNoirSharedLibrary/output.txt for all output for linkNoirSharedLibrary.
+linking Noir.dll successful.
+
+Finished linkNoirSharedLibrary, see full log file:///C:/Users/Julien/Desktop/Noir/Noir_Engine/build/tmp/linkNoirSharedLibrary/output.txt.
