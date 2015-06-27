@@ -43,10 +43,3 @@ project(":Noir_Engine")
 	}
 }
 
-project(":Noir_Editor")
-{
-}
-
-project(":Noir_Player")
-{
-}

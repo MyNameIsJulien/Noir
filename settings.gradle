@@ -1,1 +1,1 @@
-include 'Noir_Engine','Noir_Editor','Noir_Player'
+include "Noir_Engine"
