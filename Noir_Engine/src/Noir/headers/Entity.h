@@ -16,6 +16,25 @@ namespace Noir{
 				// Constructor
 				Entity(World& world, const unsigned int ID);
 				Entity(const Entity& other);
+				
+				// Methods
+				template<typename T>
+				T addComponent()
+				{
+					
+				}
+				
+				template<typename T>
+				void removeComponent()
+				{
+					
+				}
+				
+				template<typename T>
+				T getComponent()
+				{
+					
+				}
 			
 		};	
 		

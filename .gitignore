@@ -1,0 +1,5 @@
+// Gitignore: Gradle
+// Julien
+
+.gradle
+gradle

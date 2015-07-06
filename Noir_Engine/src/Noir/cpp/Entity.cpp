@@ -19,6 +19,8 @@ namespace Noir{
 			this->ID	= other.ID;
 		}
 		
+		
+		
 	}
 }
 
