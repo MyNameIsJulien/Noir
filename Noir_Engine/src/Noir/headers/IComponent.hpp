@@ -13,8 +13,12 @@
 namespace Noir{
 	namespace Entity{
 		
-		class Component{
-			virtual ~Component() = 0;	
+		class IBaseComponent{
+			virtual ~IBaseComponent() = 0;
+		};
+		
+		class IComponent{
+			virtual ~IComponent() = 0;	
 		};
 		
 	}

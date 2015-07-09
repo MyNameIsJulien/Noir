@@ -11,6 +11,7 @@
 #ifndef ECS_WORLD_HPP
 #define ECS_WORLD_HPP
 
+#include "IComponent.hpp"
 #include <vector>
 #include <memory>
 
@@ -38,11 +39,25 @@ namespace Noir{
 				Entity createEntity();
 				void 	destroyEntity(const Entity& entity);
 				
+				// Methods for managing systems
+				template<typename T, typename... Args>
+				T* addSystem(Args... args)
+				{
+					T* system = new T{std::forward<Args>(args)...};
+					return system;
+				}
+				
+				template<typename T>
+				void removeSystem()
+				{
+					return;
+				}
+				
 				// Methods for component management
 				template<typename T, typename... Args>
 				T* addComponent(Entity&, Args... args)
 				{
-					T* c = new T{std::forward<Args>(args)...};
+					T* component = new T{std::forward<Args>(args)...};
 					return T;
 				}
 				

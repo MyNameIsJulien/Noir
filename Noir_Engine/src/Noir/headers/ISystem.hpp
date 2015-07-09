@@ -18,6 +18,8 @@ namespace Noir{
 		class System{
 			
 			// Have definitive constructor. Force certain meta-parameters.
+			// TODO:
+			// Create Component manager or smth comparable.
 			System() {};
 			virtual ~System() = 0;
 			
