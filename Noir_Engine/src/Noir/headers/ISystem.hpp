@@ -1,7 +1,7 @@
 /*
 	This file is part of the Noir game engine.
 	
-	The "System" class is merely an interface
+	The "ISystem" class is merely an interface
 	being implemented by concrete systems.
 	
 	History:	
@@ -15,18 +15,19 @@ namespace Noir{
 		
 		class Entity;
 		
-		class System{
+		class ISystem{
 			
 			// Have definitive constructor. Force certain meta-parameters.
 			// TODO:
 			// Create Component manager or smth comparable.
-			System() {};
-			virtual ~System() = 0;
-			
-			virtual void addEntity(const Entity& entity);
-			virtual void removeEntity(const Entity& entity);
-			
-			virtual void processEntites();	
+			public:
+				ISystem() {};
+				virtual ~ISystem() = 0;
+				
+				virtual void addEntity(const Entity& entity);
+				virtual void removeEntity(const Entity& entity);
+				
+				virtual void processEntites();	
 			
 			// TODO:
 			// Add message system for systems.

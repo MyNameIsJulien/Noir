@@ -14,11 +14,21 @@ namespace Noir{
 	namespace Entity{
 		
 		class IBaseComponent{
-			virtual ~IBaseComponent() = 0;
+			public:
+				virtual ~IBaseComponent() = 0;
 		};
 		
-		class IComponent{
-			virtual ~IComponent() = 0;	
+		template<typename T>
+		class IComponent : public IBaseComponent{
+			public:
+				virtual ~IComponent() = 0;	
+				
+				static unsigned long getComponentID()
+				{
+					// TODO:
+					// Implement component manager.
+					return 0;
+				}
 		};
 		
 	}
