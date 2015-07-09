@@ -1,8 +1,8 @@
 /*
 	This file is part of the Noir game engine.
 	
-	The "Component" class is an interface
-	for concrete components.
+	The "Component" class is merely an interface
+	being implemented by concrete components.
 	
 	History:
 		09/07/2015 Implemented simple interface.
