@@ -73,7 +73,7 @@ namespace Noir{
 				template<typename T, typename... Args>
 				T* addComponent(Entity&, Args... args)
 				{
-					static_assert(std::is_base_of<IComponent,T>::value, "World::addComponent | Argument T isn't type of IComponent.");
+					static_assert(std::is_base_of<IBaseComponent,T>::value, "World::addComponent | Argument T isn't type of IBaseComponent.");
 					T* component = new T{std::forward<Args>(args)...};
 					return T;
 				}
@@ -81,14 +81,14 @@ namespace Noir{
 				template<typename T>
 				T* getComponent(const Entity& entity)
 				{
-					static_assert(std::is_base_of<IComponent,T>::value, "World::addComponent | Argument T isn't type of IComponent.");
+					static_assert(std::is_base_of<IBaseComponent,T>::value, "World::addComponent | Argument T isn't type of IBaseComponent.");
 					return nullptr;
 				}
 				
 				template<typename T>
 				void removeComponent(const Entity& entity)
 				{
-					static_assert(std::is_base_of<IComponent,T>::value, "World::addComponent | Argument T isn't type of IComponent.");
+					static_assert(std::is_base_of<IBaseComponent,T>::value, "World::addComponent | Argument T isn't type of IBaseComponent.");
 					return nullptr;
 				}
 				
