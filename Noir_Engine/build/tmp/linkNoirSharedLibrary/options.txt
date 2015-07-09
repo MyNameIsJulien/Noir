@@ -1,7 +1,0 @@
-/OUT:C:\Users\Julien\Desktop\Noir\Noir_Engine\build\binaries\noirSharedLibrary\Noir.dll
-/NOLOGO
-/DLL
-"/LIBPATH:C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\lib"
-"/LIBPATH:C:\Program Files (x86)\Windows Kits\8.1\Lib\winv6.3\um\x86"
-C:\Users\Julien\Desktop\Noir\Noir_Engine\build\objs\noirSharedLibrary\NoirCpp\7rooeu8tryqoz27lnodrztum6\Entity.obj
-C:\Users\Julien\Desktop\Noir\Noir_Engine\build\objs\noirSharedLibrary\NoirCpp\9jdqmki7d6lgp0ozlizj4tk6t\World.obj
