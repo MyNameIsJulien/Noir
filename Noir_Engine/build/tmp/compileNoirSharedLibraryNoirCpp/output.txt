@@ -1,8 +1,21 @@
 See file:///C:/Users/Julien/Desktop/Noir/Noir_Engine/build/tmp/compileNoirSharedLibraryNoirCpp/output.txt for all output for compileNoirSharedLibraryNoirCpp.
 compiling World.cpp successful.
 World.cpp
-
-compiling Entity.cpp successful.
-Entity.cpp
+C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\vector(1590) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
+        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\vector(1587) : while compiling class template member function 'void std::vector<unsigned long,std::allocator<_Ty>>::_Reallocate(unsigned int)'
+        with
+        [
+            _Ty=unsigned long
+        ]
+        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\vector(1617) : see reference to function template instantiation 'void std::vector<unsigned long,std::allocator<_Ty>>::_Reallocate(unsigned int)' being compiled
+        with
+        [
+            _Ty=unsigned long
+        ]
+        C:\Users\Julien\Desktop\Noir\Noir_Engine\src\Noir\headers\World.hpp(25) : see reference to class template instantiation 'std::vector<unsigned long,std::allocator<_Ty>>' being compiled
+        with
+        [
+            _Ty=unsigned long
+        ]
 
 Finished compileNoirSharedLibraryNoirCpp, see full log file:///C:/Users/Julien/Desktop/Noir/Noir_Engine/build/tmp/compileNoirSharedLibraryNoirCpp/output.txt.
