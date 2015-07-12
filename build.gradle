@@ -32,6 +32,15 @@ project(":Noir_Engine")
 				}
 			}
 			
+			ECS_Test(NativeExecutableSpec)
+			{
+				sources {
+	                cpp {
+	                    lib library: "Noir"
+	                }
+	            }
+			}
+			
     	binaries.withType(SharedLibraryBinarySpec) {
         	if (toolChain in VisualCpp) {
 				println "[*] Defined API_EXPORT."

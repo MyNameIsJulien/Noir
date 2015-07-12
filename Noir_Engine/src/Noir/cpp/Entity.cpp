@@ -3,7 +3,7 @@
 #ifndef ECS_ENTITY_CPP
 #define ECS_ENTITY_CPP
 
-#include "Entity.hpp"
+#include "..\headers\Entity.hpp"
 
 namespace Noir{
 	namespace Entity{

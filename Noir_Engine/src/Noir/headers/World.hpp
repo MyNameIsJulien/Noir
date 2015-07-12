@@ -12,84 +12,54 @@
 #define ECS_WORLD_HPP
 
 #include <vector>
-#include <memory>
-#include <type_traits>
-#include <typeinfo>
-
-#include "ISystem.hpp"
 
 namespace Noir{
 	namespace Entity{
 		
 		class Entity;
-		
+		class ISystem;
 		
 		class World final{
 			private:
-				std::vector<unsigned long> 	entities;		// Containing all IDs currently used
-				std::vector<unsigned long> 	openEntities;	// Containing all IDs for reuse
-				std::vector<Entity*>		entity_list;	// Containing all references to entities
-				std::vector<ISystem*>		system_list;	// Containing all systems
-				
-				// Remarks:
-				// Storing pointers in standard containers
-				// perhaps not a good idea.
+
+				std::vector<ISystem*> 		system_list;	// Holding all systems
+				std::vector<unsigned long>	entity_IDs;		// Holding all currently
+															// active IDs
+				std::vector<unsigned long>	open_IDs;		// Holding all open IDs
 			
 			public:
 				
-				~World();
-				
-				// Methods for entity management
-				Entity 	createEntity();
-				void 	destroyEntity(const Entity& entity);
-				
 				// Methods for managing systems
-				template<typename T, typename... Args>
-				T* addSystem(Args... args)
-				{
-					static_assert(std::is_base_of<ISystem,T>::value, "World::addSystem | Argument T isn't type of ISystem.");
+				void addSystem(ISystem& system);		// Adds a system to this world.
+															// Only one system of a TYPE allowed.
+															// TODO:
+															// Rework comment.
+				void rmSystem(ISystem& system);
+				
+				// Methods for managing entities
+				Entity 	createEntity();							// Creates an entity
+				void	destroyEntity(Entity& entity);	// Destroys an entity
+				void 	clear();								// Destroys all entities
+				
+				// Methods for managing components
+				template<typename Component, typename... Args>
+				Component addComponent(const Entity& entity,
+					Args... args)
+				{	
+					Component component = Component(std::forward<Args>(args)...)
 					for(ISystem* pSystem : system_list)
-						if(typeid(T).name() == typeid(pSystem).name())
-							return pSystem;
-							
-					T* system = new T{std::forward(args)...};
-					system_list.push_back(system);
-					return system_list.back();
+						pSystem->ProcessSystemMessage(
+								SystemMessage(MessageID::COMPONENT_ADDED, component);
+						)
+					return component;
 				}
 				
-				template<typename T>
-				void removeSystem()
+				template<typename Component>
+				void rmComponent(const Entity& entity)
 				{
-					static_assert(std::is_base_of<ISystem,T>::value, "World::addSystem | Argument T isn't type of ISystem.");
-					for(int i=0; i < system_list.size(); i++)
-						if(typeid(T).name() == typeid(system_list[i]).name())
-						{
-							delete entity_list[i];
-							entity_list.erase(entity_list.begin() + i);
-						}	
-				}
-				
-				// Methods for component management
-				template<typename T, typename... Args>
-				T* addComponent(Entity&, Args... args)
-				{
-					static_assert(std::is_base_of<IBaseComponent,T>::value, "World::addComponent | Argument T isn't type of IBaseComponent.");
-					T* component = new T{std::forward<Args>(args)...};
-					return T;
-				}
-				
-				template<typename T>
-				T* getComponent(const Entity& entity)
-				{
-					static_assert(std::is_base_of<IBaseComponent,T>::value, "World::addComponent | Argument T isn't type of IBaseComponent.");
-					return nullptr;
-				}
-				
-				template<typename T>
-				void removeComponent(const Entity& entity)
-				{
-					static_assert(std::is_base_of<IBaseComponent,T>::value, "World::addComponent | Argument T isn't type of IBaseComponent.");
-					return nullptr;
+					for(ISystem* pSystem : system_list)
+						processSystemMessage(
+							MessageID::COMPONENT_REMOVED, entity.getID(), Component::getID());
 				}
 				
 		};

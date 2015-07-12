@@ -16,14 +16,19 @@ namespace Noir{
 		class IBaseComponent{
 			public:
 				virtual ~IBaseComponent() = 0;
+				virtual IBaseComponent& operator=(const IBaseComponent& other) = default;
 		};
 		
-		template<typename T>
+		
+		template<class T>
 		class IComponent : public IBaseComponent{
 			public:
 				virtual ~IComponent() = 0;	
+				virtual IComponent& operator=(const IComponent& other) {};
 				
-				static unsigned long getComponentID()
+				T getb() {};
+				
+				static unsigned long getID()
 				{
 					// TODO:
 					// Implement component manager.

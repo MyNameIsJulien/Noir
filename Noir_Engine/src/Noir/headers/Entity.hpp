@@ -11,6 +11,9 @@
 #ifndef ECS_ENTITY_HPP
 #define ECS_ENTITY_HPP
 
+#include "IComponent.hpp"
+#include <type_traits>
+
 namespace Noir{
 	namespace Entity{
 
@@ -28,9 +31,22 @@ namespace Noir{
 						world(world), ID(ID) {};
 						
 					unsigned long getID();
-				
+					
+					// Managing components
+					template<typename Component, typename... Args>
+					Component addComponent(Args... args)
+					{
+						static_assert(std::is_base_of(IComponent, T), "T is not derived from IComponent!");
+						return world->addComponent<Component>(this, args);
+					}
+					
+					template<typename Component>
+					void rmComponent()
+					{
+						static_assert(std::is_base_of(IComponent, T), "T is not derived from IComponent!");
+						world->rmComponent<Component>(this),
+					}
 		};
-		
 	}
 }
 
