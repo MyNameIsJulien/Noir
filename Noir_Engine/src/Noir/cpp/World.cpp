@@ -1,6 +1,6 @@
 /*
 	This file is part of Noir game engine.
-
+	For further informations see World.hpp.
 */
 #ifndef ECS_WORLD_CPP
 #define ECS_WORLD_CPP

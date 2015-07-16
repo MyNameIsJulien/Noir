@@ -1,0 +1,4 @@
+See file:///C:/Users/Julien/Desktop/Noir/Noir_Engine/build/tmp/createNoirStaticLibrary/output.txt for all output for createNoirStaticLibrary.
+archiving Noir.lib successful.
+
+Finished createNoirStaticLibrary, see full log file:///C:/Users/Julien/Desktop/Noir/Noir_Engine/build/tmp/createNoirStaticLibrary/output.txt.
