@@ -11,6 +11,7 @@
 #ifndef ECS_WORLD_HPP
 #define ECS_WORLD_HPP
 
+#include "SignalManager.hpp"
 #include <vector>
 
 namespace Noir{
@@ -18,6 +19,7 @@ namespace Noir{
 		
 		class Entity;
 		class ISystem;
+		class ISlot;
 		
 		class World final{
 			private:
@@ -26,6 +28,8 @@ namespace Noir{
 				std::vector<unsigned long>	entity_IDs;		// Holding all currently
 															// active IDs
 				std::vector<unsigned long>	open_IDs;		// Holding all open IDs
+				
+				SignalManager				signalManager;		// Manages all signals ect.
 			
 			public:
 				
@@ -38,8 +42,9 @@ namespace Noir{
 				
 				// Methods for managing entities
 				Entity 	createEntity();							// Creates an entity
-				void	destroyEntity(Entity& entity);	// Destroys an entity
+				void	destroyEntity(Entity& entity);			// Destroys an entity
 				void 	clear();								// Destroys all entities
+				SignalManager getSignalManager();						// Returns the current manager
 				
 				// Methods for managing components
 				template<typename Component, typename... Args>
@@ -51,6 +56,8 @@ namespace Noir{
 						pSystem->ProcessSystemMessage(
 								SystemMessage(MessageID::COMPONENT_ADDED, component);
 						)
+						
+					for(ISlot* pSlot :)
 					return component;
 				}
 				

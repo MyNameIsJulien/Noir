@@ -15,7 +15,7 @@
 #define ECS_SIGNALMANAGER_HPP
 
 #include "ISignal.hpp"
-#include "ISlot.hpp"
+
 
 #include <map>
 #include <typeindex>
@@ -23,6 +23,8 @@
 
 namespace Noir{
 	namespace Entity{
+		
+		class ISlot;
 		
 		class SignalManager final{
 			private:

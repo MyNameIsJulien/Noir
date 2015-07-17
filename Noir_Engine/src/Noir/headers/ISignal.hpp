@@ -6,9 +6,12 @@
 	
 	History:
 		16/07/2015	Created interface.
-		17/07/2015	Fixed mistake: d'tor not public
-					Renamed file from IMessage to ISignal
+		17/07/2015	Fixed mistake: d'tor not public.
+					Renamed file from IMessage to ISignal.
+					Added header guards, which I forgot.
 */
+#ifndef ECS_ISIGNAL_HPP
+#define ECS_ISIGNAL_HPP
 
 namespace Noir{
 	namespace Entity{
@@ -20,3 +23,5 @@ namespace Noir{
 		
 	}
 }
+
+#endif
