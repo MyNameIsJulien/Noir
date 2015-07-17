@@ -1,24 +1,36 @@
 See file:///C:/Users/Julien/Desktop/Noir/Noir_Engine/build/tmp/compileNoirStaticLibraryNoirCpp/output.txt for all output for compileNoirStaticLibraryNoirCpp.
-compiling Entity.cpp successful.
-Entity.cpp
-
 compiling World.cpp successful.
 World.cpp
-C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\vector(1590) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
-        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\vector(1587) : while compiling class template member function 'void std::vector<Noir::Entity::ISystem *,std::allocator<_Ty>>::_Reallocate(unsigned int)'
+C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xtree(1084) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
+        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xtree(1081) : while compiling class template member function 'std::_Tree<std::_Tmap_traits<_Kty,_Ty,_Pr,_Alloc,false>>::_Tree(const std::_Tree<std::_Tmap_traits<_Kty,_Ty,_Pr,_Alloc,false>> &,const std::allocator<std::pair<const _Kty,_Ty>> &)'
         with
         [
-            _Ty=Noir::Entity::ISystem *
+            _Kty=std::type_index
+,            _Ty=std::vector<Noir::Entity::ISlot *,std::allocator<Noir::Entity::ISlot *>>
+,            _Pr=std::less<std::type_index>
+,            _Alloc=std::allocator<std::pair<const std::type_index,std::vector<Noir::Entity::ISlot *,std::allocator<Noir::Entity::ISlot *>>>>
         ]
-        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\vector(1617) : see reference to function template instantiation 'void std::vector<Noir::Entity::ISystem *,std::allocator<_Ty>>::_Reallocate(unsigned int)' being compiled
+        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\map(109) : see reference to function template instantiation 'std::_Tree<std::_Tmap_traits<_Kty,_Ty,_Pr,_Alloc,false>>::_Tree(const std::_Tree<std::_Tmap_traits<_Kty,_Ty,_Pr,_Alloc,false>> &,const std::allocator<std::pair<const _Kty,_Ty>> &)' being compiled
         with
         [
-            _Ty=Noir::Entity::ISystem *
+            _Kty=std::type_index
+,            _Ty=std::vector<Noir::Entity::ISlot *,std::allocator<Noir::Entity::ISlot *>>
+,            _Pr=std::less<std::type_index>
+,            _Alloc=std::allocator<std::pair<const std::type_index,std::vector<Noir::Entity::ISlot *,std::allocator<Noir::Entity::ISlot *>>>>
         ]
-        c:\users\julien\desktop\noir\noir_engine\src\noir\cpp\..\headers\World.hpp(25) : see reference to class template instantiation 'std::vector<Noir::Entity::ISystem *,std::allocator<_Ty>>' being compiled
+        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\map(70) : see reference to class template instantiation 'std::_Tree<std::_Tmap_traits<_Kty,_Ty,_Pr,_Alloc,false>>' being compiled
         with
         [
-            _Ty=Noir::Entity::ISystem *
+            _Kty=std::type_index
+,            _Ty=std::vector<Noir::Entity::ISlot *,std::allocator<Noir::Entity::ISlot *>>
+,            _Pr=std::less<std::type_index>
+,            _Alloc=std::allocator<std::pair<const std::type_index,std::vector<Noir::Entity::ISlot *,std::allocator<Noir::Entity::ISlot *>>>>
+        ]
+        c:\users\julien\desktop\noir\noir_engine\src\noir\headers\SignalManager.hpp(32) : see reference to class template instantiation 'std::map<std::type_index,std::vector<Noir::Entity::ISlot *,std::allocator<_Ty>>,std::less<_Kty>,std::allocator<std::pair<const _Kty,std::vector<_Ty,std::allocator<_Ty>>>>>' being compiled
+        with
+        [
+            _Ty=Noir::Entity::ISlot *
+,            _Kty=std::type_index
         ]
 
 Finished compileNoirStaticLibraryNoirCpp, see full log file:///C:/Users/Julien/Desktop/Noir/Noir_Engine/build/tmp/compileNoirStaticLibraryNoirCpp/output.txt.

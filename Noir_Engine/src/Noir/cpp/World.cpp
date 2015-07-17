@@ -5,9 +5,9 @@
 #ifndef ECS_WORLD_CPP
 #define ECS_WORLD_CPP
 
-#include "..\headers\World.hpp"
-#include "..\headers\ISystem.hpp"
-#include "..\headers\Entity.hpp"
+#include "World.hpp"
+#include "ISystem.hpp"
+#include "Entity.hpp"
 #include <typeinfo>
 
 namespace Noir{
@@ -48,10 +48,15 @@ Entity	World::createEntity()
 			else
 				ID = 1;
 				
-			for(ISystem* pSystem : system_list)
-				pSystem->processSystemMessage(SystemMessage(MessageID::ENTITY_CREATED, ID));
-				
+			// TODO:
+			// Inform systems.
+
 			return Entity(this, ID);
+		}
+		
+SignalManager World::getSignalManager()
+		{
+			return this->signalManager;
 		}
 		
 void	World::destroyEntity(Entity& entity)
@@ -62,20 +67,16 @@ void	World::destroyEntity(Entity& entity)
 				{
 					entity_IDs.erase(entity_IDs.begin() + i);
 					open_IDs.push_back(ID);
-					
-						for(ISystem* pSystem : system_list)
-								pSystem->processSystemMessage(
-									SystemMessage(MessageID::ENTITY_DESTROYED, ID));
+						
+					// TODO:
+					// Inform systems.
 				}
 		}
 		
 void	World::clear()
 		{
-			for(unsigned long ID : entity_IDs)
-				for(ISystem* pSystem : system_list)
-						pSystem->processSystemMessage(
-							SystemMessage(MessageID::ENTITY_DESTROYED, ID));
-							
+			// TODO:
+			// Inform systems.		
 			entity_IDs.clear();
 			open_IDs.clear();
 		}
