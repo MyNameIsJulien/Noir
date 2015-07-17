@@ -6,13 +6,16 @@
 	
 	History:
 		16/07/2015	Created interface.
+		17/07/2015	Fixed mistake: d'tor not public
+					Renamed file from IMessage to ISignal
 */
 
 namespace Noir{
 	namespace Entity{
 		
-		class IMessage{
-			virtual ~IMessage() {};
+		class ISignal{
+			public:
+				virtual ~ISignal() {};
 		};
 		
 	}

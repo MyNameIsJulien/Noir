@@ -36,14 +36,14 @@ namespace Noir{
 					template<typename Component, typename... Args>
 					Component addComponent(Args... args)
 					{
-						static_assert(std::is_base_of(IComponent, T), "T is not derived from IComponent!");
+						static_assert(std::is_base_of<IComponent, T>, "T is not derived from IComponent!");
 						return world->addComponent<Component>(this, args);
 					}
 					
 					template<typename Component>
 					void rmComponent()
 					{
-						static_assert(std::is_base_of(IComponent, T), "T is not derived from IComponent!");
+						static_assert(std::is_base_of<IComponent, T>, "T is not derived from IComponent!");
 						world->rmComponent<Component>(this),
 					}
 		};

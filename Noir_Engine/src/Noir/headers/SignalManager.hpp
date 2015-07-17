@@ -6,12 +6,15 @@
 	
 	History:
 		13/07/2015 Prototype created.
+		17/07/2015 Fixed mistake with miss use of is_base_of.
+					Class was tested and works. 
+					Gonna rename IMessage to ISignal.
 
 */
 #ifndef ECS_SIGNALMANAGER_HPP
 #define ECS_SIGNALMANAGER_HPP
 
-#include "IMessage.hpp"
+#include "ISignal.hpp"
 #include "ISlot.hpp"
 
 #include <map>
@@ -30,7 +33,7 @@ namespace Noir{
 				template<class Message>
 				void emit(Message* message)
 				{
-					static_assert(std::is_base_of(IMessage, Message), "Message is not derived from IMessage!");
+					static_assert(std::is_base_of<ISignal, Message>, "Message is not derived from ISignal!");
 					for(ISlot* pSlot : subscriber_map[std::type_index(typeid(Message))])
 					{
 						pSlot->processMessage(message);

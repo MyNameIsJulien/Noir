@@ -6,6 +6,7 @@
 	
 	History:
 		09/07/2015 Implemented simple interface.
+		17/07/2015 Removed artefacts. Does the compiler do anything actually?
 */
 #ifndef ECS_COMPONENT_HPP
 #define ECS_COMPONENT_HPP
@@ -16,7 +17,6 @@ namespace Noir{
 		class IBaseComponent{
 			public:
 				virtual ~IBaseComponent() = 0;
-				virtual IBaseComponent& operator=(const IBaseComponent& other) = default;
 		};
 		
 		
@@ -24,9 +24,6 @@ namespace Noir{
 		class IComponent : public IBaseComponent{
 			public:
 				virtual ~IComponent() = 0;	
-				virtual IComponent& operator=(const IComponent& other) {};
-				
-				T getb() {};
 				
 				static unsigned long getID()
 				{
