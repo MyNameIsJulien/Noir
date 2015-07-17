@@ -1,6 +1,0 @@
-See file:///C:/Users/Julien/Desktop/Noir/Noir_Engine/build/tmp/compileECS_TestExecutableECS_TestCpp/output.txt for all output for compileECS_TestExecutableECS_TestCpp.
-compiling ECS_TEST.cpp successful.
-ECS_TEST.cpp
-C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xlocale(337) : warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
-
-Finished compileECS_TestExecutableECS_TestCpp, see full log file:///C:/Users/Julien/Desktop/Noir/Noir_Engine/build/tmp/compileECS_TestExecutableECS_TestCpp/output.txt.
